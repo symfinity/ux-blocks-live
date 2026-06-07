@@ -1,0 +1,26 @@
+{% set is_open = outerScope.collapsible_is_open|default(false) %}
+{% set content_id = outerScope.collapsible_content_id|default('') %}
+{% set is_disabled = outerScope.collapsible_disabled|default(false) %}
+{% if as == 'summary' %}
+<summary
+    data-ui-role="collapsible-trigger"
+    {% if is_disabled %}aria-disabled="true"{% endif %}
+    {{ attributes }}
+>
+{% else %}
+<button
+    type="button"
+    data-ui-role="collapsible-trigger"
+    data-action="click->ux-blocks-core--collapsible#toggle"
+    aria-expanded="{{ is_open ? 'true' : 'false' }}"
+    aria-controls="{{ content_id }}"
+    {% if is_disabled %}disabled aria-disabled="true"{% endif %}
+    {{ attributes }}
+>
+{% endif %}
+    {% block content %}{% endblock %}
+{% if as == 'summary' %}
+</summary>
+{% else %}
+</button>
+{% endif %}

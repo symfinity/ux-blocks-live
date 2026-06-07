@@ -1,0 +1,31 @@
+{% if href %}
+<a
+    role="tab"
+    href="{{ href }}"
+    data-ui-role="tabs-trigger"
+    data-ui-state="linked"
+    data-value="{{ value }}"
+    aria-selected="{{ active ? 'true' : 'false' }}"
+    {% if disabled %}aria-disabled="true" tabindex="-1"{% endif %}
+    data-symfony--ux-blocks-live--tabs-target="trigger"
+    {{ attributes }}
+>
+{% else %}
+<button
+    type="button"
+    role="tab"
+    data-ui-role="tabs-trigger"
+    data-value="{{ value }}"
+    aria-selected="{{ active ? 'true' : 'false' }}"
+    {% if disabled %}disabled aria-disabled="true" data-ui-state="disabled"{% endif %}
+    data-action="click->symfony--ux-blocks-live--tabs#select"
+    data-symfony--ux-blocks-live--tabs-target="trigger"
+    {{ attributes }}
+>
+{% endif %}
+    {% block content %}{% endblock %}
+{% if href %}
+</a>
+{% else %}
+</button>
+{% endif %}

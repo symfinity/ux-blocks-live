@@ -1,0 +1,12 @@
+<button
+    type="button"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    data-ui-role="date-picker-trigger"
+    data-action="click->symfony--ux-blocks-live--date-picker#toggle"
+    data-symfony--ux-blocks-live--date-picker-target="trigger"
+    {{ attributes }}
+>
+    <span data-symfony--ux-blocks-live--date-picker-target="value">Pick a date</span>
+    {% block content %}{% endblock %}
+</button>

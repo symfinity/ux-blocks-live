@@ -1,0 +1,37 @@
+<div
+    data-ui-role="date-range-picker"
+    data-ui-fragment="blocks.live.date-range-picker"
+    data-controller="symfony--ux-blocks-live--date-range-picker"
+    {% if disabled %}data-ui-state="disabled"{% endif %}
+    {{ attributes }}
+>
+    <div data-ui-role="date-range-picker-segments">
+        <twig:DateRangePicker:Segment
+            segment="start"
+            :value="start"
+            :placeholder="placeholderStart"
+            label="Start date"
+            :disabled="disabled"
+            :invalid="invalid"
+        />
+        <span aria-hidden="true" data-ui-part="separator">–</span>
+        <twig:DateRangePicker:Segment
+            segment="end"
+            :value="end"
+            :placeholder="placeholderEnd"
+            label="End date"
+            :disabled="disabled"
+            :invalid="invalid"
+        />
+    </div>
+    <div
+        id="{{ attributes.id|default('date-range-picker') }}-popover"
+        role="dialog"
+        hidden
+        aria-label="Choose date range"
+        data-ui-role="date-range-picker-content"
+        data-symfony--ux-blocks-live--date-range-picker-target="content"
+    >
+        {% block content %}{% endblock %}
+    </div>
+</div>

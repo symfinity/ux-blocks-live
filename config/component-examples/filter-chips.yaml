@@ -1,0 +1,13 @@
+schema: showcase-examples/1.0
+role: filter-chips
+twig_name: FilterChips
+requires_stimulus: true
+sections:
+  - id: demo
+    title: Demo
+    layout: stack
+    items:
+      - variant: default
+        label: Filter Chips
+        props: {}
+        render_partial: showcase/_compounds/by_twig.html.twig

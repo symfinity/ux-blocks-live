@@ -1,0 +1,58 @@
+{
+    "name": "symfinity/ux-blocks-live",
+    "description": "Symfinity UX Blocks Live — stl interactive tier with blocks.live fragments (not Symfony LiveComponent)",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "require": {
+        "php": ">=8.2",
+        "symfinity/ux-blocks-live": "@dev",
+        "symfony/framework-bundle": "^7.4||^8.0",
+        "symfony/twig-bundle": "^7.4||^8.0",
+        "symfony/stimulus-bundle": "^2.0|^3.0",
+        "symfony/ux-twig-component": "^2.0|^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5 || ^11.0",
+        "symfinity/ux-blocks": "@dev",
+        "symfony/browser-kit": "^7.4||^8.0",
+        "symfony/css-selector": "^7.4||^8.0",
+        "symfony/http-client": "^7.4||^8.0",
+        "symfony/yaml": "^7.4||^8.0"
+    },
+    "suggest": {
+        "symfinity/ux-runtime": "Optional command palette JSON backend (blocks.live.command-palette)"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../ux-blocks-live",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "../ux-blocks",
+            "options": { "symlink": true }
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Symfinity\\UxBlocksLive\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Symfinity\\UxBlocksLive\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml.dist"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "version": "0.1.0-dev",
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    }
+}

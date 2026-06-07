@@ -1,0 +1,10 @@
+<button
+    type="button"
+    role="menuitem"
+    {% if disabled %}disabled aria-disabled="true"{% endif %}
+    data-ui-role="context-menu-item"
+    data-symfony--ux-blocks-live--context-menu-target="item"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</button>

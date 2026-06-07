@@ -1,0 +1,13 @@
+schema: showcase-examples/1.0
+role: input-otp
+twig_name: InputOtp
+requires_stimulus: true
+sections:
+  - id: demo
+    title: Demo
+    layout: stack
+    items:
+      - variant: default
+        label: Input Otp
+        props: {}
+        render_partial: showcase/_compounds/by_twig.html.twig

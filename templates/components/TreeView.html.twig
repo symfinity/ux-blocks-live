@@ -1,0 +1,22 @@
+<div
+    role="tree"
+    data-ui-role="tree-view"
+    data-ui-fragment="blocks.live.tree-view"
+    data-controller="symfony--ux-blocks-live--tree-view"
+    data-symfony--ux-blocks-live--tree-view-selectable-value="{{ selectable ? 'true' : 'false' }}"
+    {% if label %}aria-label="{{ label }}"{% endif %}
+    {{ attributes }}
+>
+    <ul role="group" data-ui-role="tree-view-root">
+        {% for node in nodes %}
+            {% include '@UxBlocksLive/components/TreeView/_node.html.twig' with {
+                node: node,
+                expanded: expanded,
+                selected: selected,
+                selectable: selectable,
+                depth: 0,
+            } only %}
+        {% endfor %}
+    </ul>
+    {% block content %}{% endblock %}
+</div>

@@ -1,0 +1,13 @@
+schema: showcase-examples/1.0
+role: tabs
+twig_name: Tabs
+requires_stimulus: true
+sections:
+  - id: demo
+    title: Demo
+    layout: stack
+    items:
+      - variant: default
+        label: Tabs
+        props: {}
+        render_partial: showcase/_compounds/tabs.html.twig

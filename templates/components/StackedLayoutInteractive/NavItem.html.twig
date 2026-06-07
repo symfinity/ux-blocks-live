@@ -1,0 +1,11 @@
+<button
+    type="button"
+    aria-current="false"
+    data-panel="{{ panel }}"
+    data-ui-role="stacked-layout-nav-item"
+    data-action="click->symfony--ux-blocks-live--stacked-layout-interactive#selectPanel"
+    data-symfony--ux-blocks-live--stacked-layout-interactive-target="navItem"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</button>

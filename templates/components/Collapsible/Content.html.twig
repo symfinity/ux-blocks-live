@@ -1,0 +1,12 @@
+{% set is_open = outerScope.collapsible_is_open|default(false) %}
+{% set content_id = outerScope.collapsible_content_id|default('') %}
+<div
+    id="{{ content_id }}"
+    data-ui-role="collapsible-content"
+    data-ux-blocks-core--collapsible-target="content"
+    {% if not is_open and not forceMount %}hidden{% endif %}
+    {% if not is_open and forceMount %}aria-hidden="true"{% endif %}
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>

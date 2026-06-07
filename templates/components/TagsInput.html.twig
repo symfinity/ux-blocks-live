@@ -1,0 +1,43 @@
+<div
+    data-ui-role="tags-input"
+    data-ui-fragment="blocks.live.tags-input"
+    data-controller="symfony--ux-blocks-live--tags-input"
+    data-symfony--ux-blocks-live--tags-input-max-tags-value="{{ maxTags ?? '' }}"
+    data-symfony--ux-blocks-live--tags-input-allow-duplicates-value="{{ allowDuplicates ? 'true' : 'false' }}"
+    data-symfony--ux-blocks-live--tags-input-delimiter-value="{{ delimiter }}"
+    {% if disabled %}data-ui-state="disabled"{% endif %}
+    {% if invalid %}data-ui-state="invalid"{% endif %}
+    {{ attributes }}
+>
+    <div role="list" data-ui-role="tags-input-chips" data-symfony--ux-blocks-live--tags-input-target="chipList">
+        {% for tag in tags %}
+            {% set tagLabel = tag is iterable ? tag.label : tag %}
+            <span
+                role="listitem"
+                data-ui-role="tags-input-chip"
+                data-symfony--ux-blocks-live--tags-input-target="chip"
+                data-value="{{ tag is iterable ? (tag.value ?? tagLabel) : tagLabel }}"
+            >
+                {{ tagLabel }}
+                {% if not disabled %}
+                    <button type="button" aria-label="Remove {{ tagLabel }}" data-action="click->symfony--ux-blocks-live--tags-input#removeChip">×</button>
+                {% endif %}
+            </span>
+        {% endfor %}
+    </div>
+    <input
+        type="text"
+        {% if name %}name="{{ name }}_input"{% endif %}
+        {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+        {% if disabled %}disabled{% endif %}
+        {% if invalid %}aria-invalid="true"{% endif %}
+        aria-label="{{ placeholder ?? 'Add tag' }}"
+        data-ui-role="tags-input-field"
+        data-symfony--ux-blocks-live--tags-input-target="input"
+        data-action="keydown->symfony--ux-blocks-live--tags-input#keydown input->symfony--ux-blocks-live--tags-input#input"
+    />
+    {% if name %}
+        <input type="hidden" name="{{ name }}" value="{{ tags|json_encode }}" data-symfony--ux-blocks-live--tags-input-target="hidden" />
+    {% endif %}
+    {% block content %}{% endblock %}
+</div>

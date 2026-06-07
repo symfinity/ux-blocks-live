@@ -1,0 +1,13 @@
+schema: showcase-examples/1.0
+role: slider
+twig_name: Slider
+requires_stimulus: true
+sections:
+  - id: demo
+    title: Demo
+    layout: stack
+    items:
+      - variant: default
+        label: Slider
+        props: {}
+        render_partial: showcase/_compounds/by_twig.html.twig

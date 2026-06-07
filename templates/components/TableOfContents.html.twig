@@ -1,0 +1,24 @@
+<nav
+    data-ui-role="table-of-contents"
+    data-ui-fragment="blocks.live.table-of-contents"
+    data-controller="symfony--ux-blocks-live--table-of-contents"
+    data-symfony--ux-blocks-live--table-of-contents-scroll-target-value="{{ scrollTarget }}"
+    data-symfony--ux-blocks-live--table-of-contents-offset-value="{{ offset }}"
+    data-symfony--ux-blocks-live--table-of-contents-smooth-value="{{ smooth ? 'true' : 'false' }}"
+    aria-label="{{ ariaLabel }}"
+    {{ attributes }}
+>
+    <ul class="ux-ext-toc__list">
+        {% for section in sections %}
+            {% set level = section.level|default(2) %}
+            <li class="ux-ext-toc__item{% if level == 3 %} ux-ext-toc__item--nested{% endif %}">
+                <a
+                    href="#{{ section.id }}"
+                    class="ux-ext-toc__link"
+                    data-symfony--ux-blocks-live--table-of-contents-target="link"
+                    data-section-id="{{ section.id }}"
+                >{{ section.label }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

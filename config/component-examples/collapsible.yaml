@@ -1,0 +1,13 @@
+schema: showcase-examples/1.0
+role: collapsible
+twig_name: Collapsible
+requires_stimulus: true
+sections:
+  - id: demo
+    title: Single-region disclosure
+    layout: stack
+    items:
+      - variant: default
+        label: Collapsible
+        props: {}
+        render_partial: showcase/_compounds/collapsible.html.twig

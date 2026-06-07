@@ -1,0 +1,14 @@
+<li
+    role="treeitem"
+    data-ui-role="tree-view-item"
+    data-node-id="{{ id }}"
+    {% if hasChildren %}aria-expanded="{{ expanded ? 'true' : 'false' }}"{% endif %}
+    {% if selected %}aria-selected="true"{% endif %}
+    {% if disabled %}aria-disabled="true" data-ui-state="disabled"{% endif %}
+    tabindex="-1"
+    data-symfony--ux-blocks-live--tree-view-target="item"
+    {{ attributes }}
+>
+    <span data-ui-part="label">{{ label }}</span>
+    {% block content %}{% endblock %}
+</li>
