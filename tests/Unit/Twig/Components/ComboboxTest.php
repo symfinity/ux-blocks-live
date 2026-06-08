@@ -12,9 +12,9 @@ final class ComboboxTest extends ComponentTestCase
     public function rootHasBlocksExtFragment(): void
     {
         self::bootKernel();
-        $html = $this->renderComponent('Combobox');
+        $html = $this->renderLiveComponent('ComboboxLive');
 
         $this->assertRootAttributes($html, 'combobox', 'blocks.live.combobox');
-        self::assertStringContainsString('data-controller="symfony--ux-blocks-live--combobox"', $html);
+        $this->assertStimulusController($html, 'symfony--ux-blocks-live--combobox');
     }
 }

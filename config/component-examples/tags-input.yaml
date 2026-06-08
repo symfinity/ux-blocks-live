@@ -1,6 +1,6 @@
 schema: showcase-examples/1.0
 role: tags-input
-twig_name: TagsInput
+twig_name: TagsInputLive
 requires_stimulus: true
 sections:
   - id: demo

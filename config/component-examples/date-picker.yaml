@@ -1,6 +1,6 @@
 schema: showcase-examples/1.0
 role: date-picker
-twig_name: DatePicker
+twig_name: DatePickerLive
 requires_stimulus: true
 sections:
   - id: demo

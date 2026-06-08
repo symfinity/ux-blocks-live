@@ -1,8 +1,0 @@
-schema: showcase-examples/1.0
-role: carousel-interactive
-twig_name: CarouselInteractive
-requires_stimulus: true
-sections:
-  - id: demo
-    title: Demo
-    layout: custom

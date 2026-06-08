@@ -1,6 +1,6 @@
 schema: showcase-examples/1.0
 role: date-range-picker
-twig_name: DateRangePicker
+twig_name: DateRangePickerLive
 requires_stimulus: true
 sections:
   - id: demo

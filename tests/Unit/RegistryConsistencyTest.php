@@ -52,8 +52,9 @@ final class RegistryConsistencyTest extends TestCase
         self::assertNotEmpty($row['php_class']);
         self::assertSame('blocks.live.' . $role, $row['fragment_id']);
         self::assertSame('blocks.live.' . $role . '.{n}', $row['fragment_pattern']);
-        self::assertSame('A', $row['stage']);
+        self::assertSame('B', $row['stage']);
         self::assertSame('shipped', $row['status']);
+        self::assertStringContainsString('Live', $row['twig_component']);
         self::assertTrue(class_exists($row['php_class']), $row['php_class']);
     }
 

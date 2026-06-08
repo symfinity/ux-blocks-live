@@ -12,9 +12,9 @@ final class DatePickerTest extends ComponentTestCase
     public function rootHasBlocksExtFragment(): void
     {
         self::bootKernel();
-        $html = $this->renderComponent('DatePicker');
+        $html = $this->renderLiveComponent('DatePickerLive');
 
         $this->assertRootAttributes($html, 'date-picker', 'blocks.live.date-picker');
-        self::assertStringContainsString('data-controller="symfony--ux-blocks-live--date-picker"', $html);
+        $this->assertStimulusController($html, 'symfony--ux-blocks-live--date-picker');
     }
 }

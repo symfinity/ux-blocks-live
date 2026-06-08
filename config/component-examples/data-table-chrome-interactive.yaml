@@ -1,6 +1,6 @@
 schema: showcase-examples/1.0
 role: data-table-chrome-interactive
-twig_name: DataTableChromeInteractive
+twig_name: DataTableChromeInteractiveLive
 requires_stimulus: true
 sections:
   - id: demo

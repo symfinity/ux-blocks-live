@@ -2,33 +2,13 @@
     "name": "@symfinity/ux-blocks-live",
     "symfony": {
         "controllers": {
-            "alert-dialog": {
-                "main": "controllers/alert-dialog_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "calendar": {
-                "main": "controllers/calendar_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "carousel-interactive": {
-                "main": "controllers/carousel-interactive_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
             "combobox": {
                 "main": "controllers/combobox_controller.js",
                 "fetch": "eager",
                 "enabled": true
             },
-            "command-palette": {
-                "main": "controllers/command-palette_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "context-menu": {
-                "main": "controllers/context-menu_controller.js",
+            "data-table-chrome-interactive": {
+                "main": "controllers/data-table-chrome-interactive_controller.js",
                 "fetch": "eager",
                 "enabled": true
             },
@@ -42,108 +22,8 @@
                 "fetch": "eager",
                 "enabled": true
             },
-            "drawer": {
-                "main": "controllers/drawer_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "dropdown-menu": {
-                "main": "controllers/dropdown-menu_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "filter-chips": {
-                "main": "controllers/filter-chips_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "hover-card": {
-                "main": "controllers/hover-card_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "input-otp": {
-                "main": "controllers/input-otp_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "menubar": {
-                "main": "controllers/menubar_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "navigation-menu": {
-                "main": "controllers/navigation-menu_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "rating": {
-                "main": "controllers/rating_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "resizable": {
-                "main": "controllers/resizable_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "sheet": {
-                "main": "controllers/sheet_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "sidebar": {
-                "main": "controllers/sidebar_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "slider": {
-                "main": "controllers/slider_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "stacked-layout-interactive": {
-                "main": "controllers/stacked-layout-interactive_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "table-of-contents": {
-                "main": "controllers/table-of-contents_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "tabs": {
-                "main": "controllers/tabs_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
             "tags-input": {
                 "main": "controllers/tags-input_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "tree-view": {
-                "main": "controllers/tree-view_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "toast": {
-                "main": "controllers/toast_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "toggle": {
-                "main": "controllers/toggle_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "toggle-group": {
-                "main": "controllers/toggle-group_controller.js",
-                "fetch": "eager",
-                "enabled": true
-            },
-            "data-table-chrome-interactive": {
-                "main": "controllers/data-table-chrome-interactive_controller.js",
                 "fetch": "eager",
                 "enabled": true
             }

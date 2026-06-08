@@ -1,6 +1,6 @@
 schema: showcase-examples/1.0
 role: combobox
-twig_name: Combobox
+twig_name: ComboboxLive
 requires_stimulus: true
 sections:
   - id: demo

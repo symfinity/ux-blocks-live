@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Symfinity\UxBlocksLive\Tests\Unit\Twig\Components;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\UX\TwigComponent\Test\InteractsWithTwigComponents;
+use Symfony\UX\LiveComponent\Test\InteractsWithLiveComponents;
 use Symfinity\UxBlocksLive\Tests\Integration\UxBlocksLiveTestKernel;
 
 abstract class ComponentTestCase extends KernelTestCase
 {
-    use InteractsWithTwigComponents;
+    use InteractsWithLiveComponents;
 
     protected static function getKernelClass(): string
     {
@@ -18,12 +18,11 @@ abstract class ComponentTestCase extends KernelTestCase
     }
 
     /**
-     * @param class-string|non-empty-string $name
-     * @param array<string, mixed>          $data
+     * @param array<string, mixed> $data
      */
-    protected function renderComponent(string $name, array $data = []): string
+    protected function renderLiveComponent(string $name, array $data = []): string
     {
-        return (string) $this->renderTwigComponent($name, $data);
+        return (string) $this->createLiveComponent($name, $data)->render();
     }
 
     protected function assertRootAttributes(string $html, string $role, string $fragment): void
@@ -31,5 +30,13 @@ abstract class ComponentTestCase extends KernelTestCase
         self::assertStringContainsString(sprintf('data-ui-role="%s"', $role), $html);
         self::assertStringContainsString(sprintf('data-ui-fragment="%s"', $fragment), $html);
         self::assertDoesNotMatchRegularExpression('/html_cva|tailwind_merge|twig-tailwind-extra/', $html);
+    }
+
+    protected function assertStimulusController(string $html, string $controllerIdentifier): void
+    {
+        self::assertMatchesRegularExpression(
+            sprintf('/\bdata-controller="[^"]*\b%s\b/', preg_quote($controllerIdentifier, '/')),
+            $html,
+        );
     }
 }

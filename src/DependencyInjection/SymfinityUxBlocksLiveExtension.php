@@ -14,6 +14,16 @@ final class SymfinityUxBlocksLiveExtension extends Extension implements PrependE
 {
     public function prepend(ContainerBuilder $container): void
     {
+        if ($container->hasExtension('framework')) {
+            $container->prependExtensionConfig('framework', [
+                'asset_mapper' => [
+                    'paths' => [
+                        \dirname(__DIR__, 2).'/assets' => 'ux-blocks-live',
+                    ],
+                ],
+            ]);
+        }
+
         $container->prependExtensionConfig('twig', [
             'paths' => [
                 \dirname(__DIR__, 2) . '/templates' => 'UxBlocksLive',
