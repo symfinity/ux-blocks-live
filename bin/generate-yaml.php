@@ -28,6 +28,7 @@ $coreRoles = [
     ['role' => 'skeleton', 'twig' => 'Skeleton', 'class' => 'Skeleton', 'status' => 'v1'],
     ['role' => 'empty', 'twig' => 'Empty', 'class' => 'EmptyState', 'status' => 'v0'],
     ['role' => 'image', 'twig' => 'Image', 'class' => 'Image', 'status' => 'v1'],
+    ['role' => 'figure', 'twig' => 'Figure', 'class' => 'Figure', 'status' => 'v1'],
 ];
 
 $extRoles = [
@@ -190,7 +191,7 @@ foreach ($liveRoles as $r) {
     $liveAliases['blocks.ext.' . $r['role']] = 'blocks.live.' . $r['role'];
 }
 
-dumpYaml($root . '/ux-blocks-core/config/ux_roles.yaml', '1.3', 'blocks', 'UxBlocksCore', $coreRoles, 'nat');
+dumpYaml($root . '/ux-blocks-core/config/ux_roles.yaml', '1.4', 'blocks', 'UxBlocksCore', $coreRoles, 'nat');
 dumpYaml($root . '/ux-blocks-extended/config/ux_roles.yaml', '1.3', 'blocks.ext', 'UxBlocksExtended', $extRoles, 'nat', $coreAliases);
 dumpYaml($root . '/ux-blocks-live/config/ux_roles.yaml', '1.3', 'blocks.live', 'UxBlocksLive', $liveRoles, 'stl', $liveAliases);
 
