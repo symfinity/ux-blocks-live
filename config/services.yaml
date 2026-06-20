@@ -8,6 +8,3 @@ services:
     exclude:
       - '../src/SymfinityUxBlocksLiveBundle.php'
       - '../src/DependencyInjection/'
-
-  Symfinity\UxBlocksLive\Controller\CatalogController:
-    tags: ['controller.service_arguments']

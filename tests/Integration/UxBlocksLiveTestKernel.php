@@ -51,7 +51,7 @@ final class UxBlocksLiveTestKernel extends Kernel
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->import(\dirname(__DIR__, 2) . '/config/routes.yaml');
+        // 107: tier catalog routes.yaml retired (Phase 2); only LiveComponent routes remain.
         $routes->import('@LiveComponentBundle/config/routes.php');
     }
 
@@ -62,6 +62,11 @@ final class UxBlocksLiveTestKernel extends Kernel
             'test' => true,
             'router' => ['utf8' => true],
             'php_errors' => ['log' => false],
+        ]);
+
+        // 107 Stage B opt-in: tier fragment tests assert the enabled path.
+        $container->extension('symfinity_ux_blocks_core', [
+            'fragment_ids' => true,
         ]);
 
         $container->extension('twig', [
