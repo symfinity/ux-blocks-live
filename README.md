@@ -1,51 +1,39 @@
-# Ux Blocks Live
+<div align="center">
 
-**LiveComponent tier — server-synchronized widgets via Symfony UX LiveComponent.**
+# UX Blocks Live
 
-Symfinity UX Blocks Live ships five `#[AsLiveComponent]` roles with `blocks.live.*` fragment ids. Requires `symfinity/ux-blocks-interactive`, **`symfony/ux-live-component`**, and **`symfony/ux-turbo`**.
+### LiveComponent widgets with blocks.live fragments
 
-## Tier model (057)
+[![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
+[![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
+<br/>
+[![CI](https://github.com/symfinity/ux-blocks-live/actions/workflows/ci.yml/badge.svg)](https://github.com/symfinity/ux-blocks-live/actions/workflows/ci.yml)
+<br/>
+[![Release](https://img.shields.io/packagist/v/symfinity/ux-blocks-live.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-live)
+[![Downloads](https://img.shields.io/packagist/dt/symfinity/ux-blocks-live.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-live)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
-| Tier | Package | Prefix | Interaction |
-|------|---------|--------|-------------|
-| Interactive | `ux-blocks-interactive` | `blocks.int` | `stl` client widgets |
-| **Live** | **`ux-blocks-live`** | **`blocks.live`** | **`live`** LiveComponents |
+</div>
 
-## Registry
+> [!NOTE]
+> **Read-only mirror.**
+> See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
 
-See `config/ux_roles.yaml` — **5** LiveComponent roles: `combobox`, `date-picker`, `date-range-picker`, `tags-input`, `data-table-chrome-interactive`.
+## Features
 
-**MUST NOT** conflate with pre-057 `stl` tier — that catalog moved to `ux-blocks-interactive`.
+- **5 LiveComponent roles** — combobox, date pickers, tags input, and interactive data table
+- **Server-synchronized (`live`)** — Symfony UX LiveComponent + Turbo
+- **Registry-aligned** — `blocks.live.*` fragment ids
+- **Requires interactive tier** — builds on `symfinity/ux-blocks-interactive`
 
-## Maintainer Sass pipeline (120)
+## Interaction profile
 
-Author role CSS in `assets/scss/partials/` + `_bundle.scss`. From product monorepo root:
+| Token | In this package |
+|-------|-----------------|
+| `live` | Default — LiveComponent server sync |
+| `act` | Optional on interactive data table chrome |
 
-```bash
-cd src/symfinity
-bin/blocks-css-compile --package=ux-blocks-live --check
-bin/ux-blocks-scss-audit --package=ux-blocks-live --check
-```
-
-See [ux-blocks maintainer Sass pipeline](../ux-blocks/README.md#maintainer--sass-author-pipeline-120).
-
-## Requirements
-
-- PHP 8.2+
-- Symfony 7.4+ / 8.0+
-- `symfinity/ux-blocks-interactive`
-- `symfony/ux-live-component`
-- `symfony/ux-turbo`
-
-## Stimulus assets
-
-Regenerate `assets/package.json` from on-disk controllers before release or when adding roles:
-
-```bash
-php bin/scaffold-assets-package-json.php
-```
-
-PHPUnit `StimulusControllersTest` guards that every registered controller has a matching `*_controller.js` file.
+## Component inventory
 
 
 <!-- ux-blocks:registry:start -->
@@ -57,3 +45,48 @@ PHPUnit `StimulusControllersTest` guards that every registered controller has a 
 | tags-input | TagsInputLive | live | `blocks.live.tags-input` | shipped |
 | data-table-chrome-interactive | DataTableChromeInteractiveLive | live, act | `blocks.live.data-table-chrome-interactive` | shipped |
 <!-- ux-blocks:registry:end -->
+
+## Prerequisites
+
+Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint to your project's `composer.json` (see [recipes README](https://github.com/symfinity/recipes/blob/main/README.md)) — recipes are not in Symfony's official recipe repository yet.
+
+## Installation
+
+```bash
+composer require symfinity/ux-blocks-live
+```
+
+See [Installation](docs/installation.md).
+
+## Quick Start
+
+```twig
+<twig:ComboboxLive name="country" :options="countries" />
+```
+
+See [Quick start](docs/quickstart.md) for the full walkthrough.
+
+## Documentation
+
+- **[Quick start](docs/quickstart.md)** — minimal setup path
+- **[Installation](docs/installation.md)** — Flex, dependencies, verify
+- **[Configuration](docs/configuration.md)** — bundle and app options
+- **[Usage](docs/usage.md)** — day-to-day patterns
+- **[Upgrade](docs/upgrade.md)** — version migrations
+
+## Requirements
+
+- PHP 8.2 or higher
+- Symfony 7.4 or 8.x
+- `symfinity/ux-blocks-interactive` ^0.1
+- `symfony/ux-live-component` and `symfony/ux-turbo`
+
+## Support
+
+- [GitHub Issues](https://github.com/symfinity/ux-blocks-live/issues)
+- [Security](.github/SECURITY.md)
+- [Contributing](CONTRIBUTING.md)
+
+## License
+
+[MIT](LICENSE)
