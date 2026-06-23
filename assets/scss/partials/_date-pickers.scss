@@ -1,0 +1,42 @@
+[data-ui-role='date-picker'] {
+  position: relative;
+  display: inline-block;
+  font-family: var(--ui-font-family-sans);
+}
+
+[data-ui-role='date-picker-content'] {
+  z-index: var(--ui-z-popover);
+  margin-block-start: var(--ui-space-xs);
+}
+
+[data-ui-role='date-range-picker'] {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-space-sm);
+  font-family: var(--ui-font-family-sans);
+}
+
+[data-ui-role='date-range-picker-segments'] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-sm);
+}
+
+[data-ui-role='date-range-picker-segment'] {
+  padding: var(--ui-space-xs) var(--ui-space-sm);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-md);
+  font-size: var(--ui-font-size-sm);
+}
+
+[data-ui-role='date-range-picker-content'] {
+  z-index: var(--ui-z-popover);
+  margin-block-start: var(--ui-space-xs);
+  padding: var(--ui-space-md);
+  border: 1px solid var(--ui-overlay-border);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-overlay-surface);
+  box-shadow: var(--ui-overlay-shadow);
+}

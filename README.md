@@ -17,6 +17,18 @@ See `config/ux_roles.yaml` — **5** LiveComponent roles: `combobox`, `date-pick
 
 **MUST NOT** conflate with pre-057 `stl` tier — that catalog moved to `ux-blocks-interactive`.
 
+## Maintainer Sass pipeline (120)
+
+Author role CSS in `assets/scss/partials/` + `_bundle.scss`. From product monorepo root:
+
+```bash
+cd src/symfinity
+bin/blocks-css-compile --package=ux-blocks-live --check
+bin/ux-blocks-scss-audit --package=ux-blocks-live --check
+```
+
+See [ux-blocks maintainer Sass pipeline](../ux-blocks/README.md#maintainer--sass-author-pipeline-120).
+
 ## Requirements
 
 - PHP 8.2+
@@ -34,3 +46,14 @@ php bin/scaffold-assets-package-json.php
 ```
 
 PHPUnit `StimulusControllersTest` guards that every registered controller has a matching `*_controller.js` file.
+
+
+<!-- ux-blocks:registry:start -->
+| Role | Twig | Interaction | Fragment | Status |
+|------|------|-------------|----------|--------|
+| combobox | ComboboxLive | live | `blocks.live.combobox` | shipped |
+| date-picker | DatePickerLive | live | `blocks.live.date-picker` | shipped |
+| date-range-picker | DateRangePickerLive | live | `blocks.live.date-range-picker` | shipped |
+| tags-input | TagsInputLive | live | `blocks.live.tags-input` | shipped |
+| data-table-chrome-interactive | DataTableChromeInteractiveLive | live, act | `blocks.live.data-table-chrome-interactive` | shipped |
+<!-- ux-blocks:registry:end -->
