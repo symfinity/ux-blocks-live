@@ -40,6 +40,7 @@
         "phpstan/phpstan-symfony": "^2.0",
         "phpunit/phpunit": "^10.5 || ^11.0",
         "symfinity/ux-blocks": "^0.1.3",
+        "symfinity/ux-blocks-marketing": "^0.1",
         "symfony/browser-kit": "^7.4||^8.0",
         "symfony/css-selector": "^7.4||^8.0",
         "symfony/http-client": "^7.4||^8.0",
