@@ -1,0 +1,14 @@
+role: combobox
+twig_name: ComboboxLive
+examples:
+  - id: default
+    title: Default
+    section: Variants
+    props:
+      placeholder: Search…
+  - id: creatable
+    title: Creatable
+    section: Variants
+    props:
+      creatable: true
+      placeholder: Search or create…

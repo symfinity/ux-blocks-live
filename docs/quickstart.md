@@ -1,55 +1,49 @@
-# Quickstart: symfinity/ux-blocks-live
+# Quick start
 
-**Status:** shipped 2026-06-03 — 24 `stl` roles, `blocks.live.*` fragments.
+Use UX Blocks Live components in a Symfony app with ui-kernel theme CSS and LiveComponent enabled.
 
 ## Prerequisites
 
-- Product monorepo `src/symfinity/` with Docker (`docker compose`, `make test`)
-- **003** / **024** `DONE`: `symfinity/ux-blocks-core`, `symfinity/ux-blocks-demo`
-- Recommended: `symfinity/ui-kernel` for themed previews
+[Installation](installation.md) completed — upstream tiers plus `symfinity/ux-blocks-live`. Add `symfinity/ui-kernel` for themed apps. Confirm LiveComponent and Turbo bundles are registered.
 
-## Install
+## 1. Include ui-kernel CSS
 
-```bash
-cd src/symfinity
-./bin/composer require symfinity/ux-blocks-live
-
-# Optional command palette backend:
-./bin/composer require symfinity/ux-runtime
-```
-
-Flex: `recipes/symfinity/ux-blocks-live/0.1/`
-
-## Minimal Twig
+Live roles rely on ui-kernel design tokens. In your base layout `<head>`:
 
 ```twig
-<twig:DropdownMenu>
-  <twig:DropdownMenu:Trigger>Open</twig:DropdownMenu:Trigger>
-  <twig:DropdownMenu:Content>
-    <twig:DropdownMenu:Item href="/settings">Settings</twig:DropdownMenu:Item>
-  </twig:DropdownMenu:Content>
-</twig:DropdownMenu>
-
-<twig:CommandPalette commandsUrl="/_ui/palette/commands" />
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My app{% endblock %}</title>
+    {{ ui_kernel_theme_boot_script() }}
+    {{ ui_kernel_css()|raw }}
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    {% block body %}{% endblock %}
+</body>
+</html>
 ```
 
-## Demo hub (`ux-blocks-demo`)
+## 2. Render a LiveComponent
 
-| Route | Category |
-|-------|----------|
-| `/extended` | Index |
-| `/extended/overlays` | Overlays |
-| `/extended/navigation` | Navigation |
-| `/extended/app-shell` | Sidebar, menubar, nav menu |
-| `/extended/forms` | Form micro-UX |
-| `/extended/data` | Table chrome, carousel, resizable, toast |
-| `/extended/command-palette` | With / without ux-runtime |
+Use `*Live` Twig component tags — server state syncs through Symfony UX LiveComponent:
 
-## Verification
+```twig
+<twig:ComboboxLive name="country" placeholder="Choose a country…" />
 
-| Check | Command |
-|-------|---------|
-| Package tests | `docker compose run php vendor/bin/phpunit -c packages/ux-blocks-live/phpunit.xml.dist` |
-| Monorepo gate | `make test` |
+<twig:TagsInputLive name="tags" placeholder="Add tags…" />
 
-## Related
+<twig:DateRangePickerLive placeholderStart="Start" placeholderEnd="End" />
+```
+
+Wrap pages that mutate live state in a Turbo frame or drive when using partial updates — see [Configuration](configuration.md).
+
+## Next steps
+
+- [Components](components.md) — handbook index
+- [Combobox](components/combobox.md) · [Tags input](components/tags-input.md)
+- [Usage](usage.md) — patterns and form binding
+- [Verification](verification.md) — clean-app smoke

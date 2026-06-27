@@ -1,8 +1,30 @@
 {
     "name": "symfinity/ux-blocks-live",
-    "description": "Symfinity UX Blocks Live — LiveComponent catalog tier with blocks.live fragments",
+    "description": "LiveComponent widgets",
     "license": "MIT",
     "type": "symfony-bundle",
+    "homepage": "https://github.com/symfinity/ux-blocks-live",
+    "support": {
+        "issues": "https://github.com/symfinity/ux-blocks-live/issues",
+        "source": "https://github.com/symfinity/ux-blocks-live",
+        "docs": "https://docs.symfinity.dev/ux-blocks-live"
+    },
+    "authors": [
+        {
+            "name": "Symfinity",
+            "email": "dev@symfinity.net",
+            "homepage": "https://symfinity.net/"
+        }
+    ],
+    "keywords": [
+        "symfony",
+        "symfony-bundle",
+        "symfony-ux",
+        "live-component",
+        "twig-components",
+        "ux-blocks",
+        "design-system"
+    ],
     "require": {
         "php": ">=8.2",
         "symfinity/ux-blocks-interactive": "@dev",
@@ -14,6 +36,8 @@
         "symfony/ux-turbo": "^2.0|^3.0"
     },
     "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-symfony": "^2.0",
         "phpunit/phpunit": "^10.5 || ^11.0",
         "symfinity/ux-blocks": "@dev",
         "symfony/browser-kit": "^7.4||^8.0",
@@ -44,7 +68,11 @@
         }
     },
     "scripts": {
-        "test": "phpunit -c phpunit.xml.dist"
+        "test": "phpunit -c phpunit.xml.dist",
+        "phpstan": "phpstan analyse --memory-limit=512M"
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -52,6 +80,10 @@
     "extra": {
         "branch-alias": {
             "dev-main": "0.1.x-dev"
-        }
+        },
+        "symfony": {
+            "require": "^7.4||^8.0"
+        },
+        "_comment": "Switch symfinity/ux-blocks-interactive to ^0.1 when interactive is tagged on Packagist (127 dependency-order)."
     }
 }

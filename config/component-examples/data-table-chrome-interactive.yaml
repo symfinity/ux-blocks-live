@@ -1,0 +1,14 @@
+role: data-table-chrome-interactive
+twig_name: DataTableChromeInteractiveLive
+examples:
+  - id: default
+    title: Default chrome
+    section: Variants
+    props: {}
+  - id: filtered
+    title: With filter
+    section: States
+    props:
+      filter: symfony
+      sort: name
+      page: 2

@@ -1,19 +1,52 @@
-# `combobox`
+# Combobox
 
-- **Twig:** `<twig:Combobox />`
-- **Fragment:** `blocks.live.combobox`
-- **Stimulus:** `symfony--ux-blocks-live--combobox`
-- **Interaction:** stl
-- **A11y pattern:** `aria-activedescendant` on the combobox input when the listbox is open (see [a11y-listbox-hardening](../../../../../specs/symfinity/symfinity/046-ux-blocks-live-r2/contracts/a11y-listbox-hardening.md))
+Searchable single-select with optional creatable entries — server state via LiveComponent.
 
-## Creatable mode (046)
+## When to use
 
-Set `creatable: true` to commit free-text on Enter when no option is active. Optional `preventDuplicates` (default `true`) blocks duplicate labels.
+Use **ComboboxLive** when the selected value must sync to the server without a full form post — filters, inline editors, and wizard steps. For static client-only comboboxes, see **ux-blocks-interactive**.
+
+## Guidelines
+
+**Do**
+
+- Set a visible label or `aria-label` on the input.
+- Use `creatable: true` when users may add values not in the preset list.
+- Keep option lists reasonably sized; paginate large datasets server-side.
+
+**Don't**
+
+- Use for simple native `<select>` with a fixed small set — prefer form Select from **ux-blocks-form**.
+- Rely on colour alone to indicate selection state.
+
+## Usage
 
 ```twig
-<twig:Combobox :creatable="true" placeholder="Search or create…" />
+<twig:ComboboxLive name="country" placeholder="Search countries…" />
+
+<twig:ComboboxLive name="label" :creatable="true" placeholder="Search or create…" />
 ```
 
-Dispatches `ux-blocks-live:combobox-create` with `{ label, value }` detail.
+Variant previews render live from `config/component-examples/combobox.yaml`.
 
-See templates under `templates/components/` and the package README component table.
+## API Reference
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `selected` | `string?` | `null` | Writable selected value |
+| `creatable` | `bool` | `false` | Allow committing free-text when no option matches |
+| `onCreateValue` | `string?` | `null` | Hook for custom create handling |
+| `preventDuplicates` | `bool` | `true` | Block duplicate labels in creatable mode |
+
+Pass `name`, `placeholder`, `disabled`, and native attributes on the component tag.
+
+## Accessibility
+
+- Input exposes combobox/listbox roles when the list is open.
+- Active option is tracked with `aria-activedescendant` when the listbox is expanded.
+- Ensure an accessible name via `<label>` or `aria-label`.
+
+## Related
+
+- [Date picker](date-picker.md)
+- [Tags input](tags-input.md)

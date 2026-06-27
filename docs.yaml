@@ -11,42 +11,23 @@ sidebar:
   - troubleshooting
   - upgrade
   - usage
+  - verification
 
 slices:
   - symfony: "7.4"
     sources:
       - components.md
-      - components/alert-dialog-enhanced.md
-      - components/calendar.md
-      - components/carousel-interactive.md
       - components/combobox.md
-      - components/command-palette.md
-      - components/context-menu.md
-      - components/data-table-chrome.md
+      - components/data-table-chrome-interactive.md
       - components/date-picker.md
-      - components/drawer.md
-      - components/dropdown-menu.md
-      - components/filter-chips.md
-      - components/hover-card.md
-      - components/input-otp.md
-      - components/menubar.md
-      - components/navigation-menu.md
-      - components/rating.md
-      - components/resizable.md
-      - components/sheet.md
-      - components/sidebar.md
-      - components/slider.md
-      - components/stacked-layout-interactive.md
-      - components/tabs.md
-      - components/toast.md
-      - components/toggle-group.md
-      - components/toggle.md
+      - components/date-range-picker.md
+      - components/tags-input.md
       - configuration.md
       - index.md
       - installation.md
-      - porting.md
       - quickstart.md
       - reference.md
       - troubleshooting.md
       - upgrade.md
       - usage.md
+      - verification.md

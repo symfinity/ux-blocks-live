@@ -76,8 +76,7 @@ final class TagsInputLive
             return;
         }
 
-        unset($this->tags[$index]);
-        $this->tags = array_values($this->tags);
+        array_splice($this->tags, $index, 1);
     }
 
     #[LiveAction]
@@ -93,7 +92,7 @@ final class TagsInputLive
     private function hasTagLabel(string $label): bool
     {
         foreach ($this->tags as $tag) {
-            $tagLabel = \is_array($tag) ? (string) ($tag['label'] ?? '') : (string) $tag;
+            $tagLabel = \is_array($tag) ? (string) $tag['label'] : (string) $tag;
             if ($tagLabel === $label) {
                 return true;
             }

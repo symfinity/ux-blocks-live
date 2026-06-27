@@ -2,7 +2,7 @@
 
 # UX Blocks Live
 
-### LiveComponent widgets with blocks.live fragments
+### LiveComponent widgets
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
 [![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
@@ -56,6 +56,8 @@ Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint 
 composer require symfinity/ux-blocks-live
 ```
 
+For the **complete official catalog**, use [`symfinity/ux-blocks-full`](https://github.com/symfinity/ux-blocks-full).
+
 See [Installation](docs/installation.md).
 
 ## Quick Start
@@ -72,6 +74,8 @@ See [Quick start](docs/quickstart.md) for the full walkthrough.
 - **[Installation](docs/installation.md)** — Flex, dependencies, verify
 - **[Configuration](docs/configuration.md)** — bundle and app options
 - **[Usage](docs/usage.md)** — day-to-day patterns
+- **[Components](docs/components.md)** — five Live role handbook pages
+- **[Verification](docs/verification.md)** — clean-app smoke steps
 - **[Upgrade](docs/upgrade.md)** — version migrations
 
 ## Requirements

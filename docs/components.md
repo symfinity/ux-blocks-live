@@ -1,21 +1,15 @@
 # Components
 
-## Interaction profile
+LiveComponent roles with server-synchronized state.
 
-Short paragraph: which interaction tokens this package uses (`nat`, `act`, `stl`, …). See the package README component inventory table for the authoritative role list.
+## Handbook index
 
-## Component index
+| Component | Description |
+|-----------|-------------|
+| [Combobox](components/combobox.md) | Searchable single-select with optional creatable entries |
+| [Date picker](components/date-picker.md) | Single-date selection |
+| [Date range picker](components/date-range-picker.md) | Paired start and end dates |
+| [Tags input](components/tags-input.md) | Multi-value token field |
+| [Data table chrome interactive](components/data-table-chrome-interactive.md) | Sort, filter, and pagination chrome for tables |
 
-| Role | Twig | Interaction | Handbook |
-|------|------|-------------|----------|
-| {role} | {TwigName} | nat | [{Title}](components/{role}.md) |
-
-Mirror the package README inventory table; do not duplicate long prose here.
-
-## Using components
-
-Twig name, fragment prefix (`blocks`, `blocks.ext`, `blocks.marketing`, `blocks.shop`, `lab`), link to [Quick start](quickstart.md).
-
-## Family navigation
-
-On the docs site, open **Components** in the left nav for tier overviews and per-role pages across the UX Blocks family.
+Requires **ux-blocks-interactive** and upstream core/extended/form tiers.

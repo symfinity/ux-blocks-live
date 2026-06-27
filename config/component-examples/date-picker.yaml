@@ -1,0 +1,14 @@
+role: date-picker
+twig_name: DatePickerLive
+examples:
+  - id: default
+    title: Default
+    section: Variants
+    props:
+      placeholder: Pick a date
+  - id: with-value
+    title: With value
+    section: States
+    props:
+      selected: '2026-06-27'
+      placeholder: Pick a date

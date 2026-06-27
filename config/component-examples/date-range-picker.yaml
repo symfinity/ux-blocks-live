@@ -1,0 +1,16 @@
+role: date-range-picker
+twig_name: DateRangePickerLive
+examples:
+  - id: default
+    title: Default
+    section: Variants
+    props:
+      placeholderStart: Start
+      placeholderEnd: End
+  - id: invalid
+    title: Invalid
+    section: States
+    props:
+      invalid: true
+      placeholderStart: Start
+      placeholderEnd: End
