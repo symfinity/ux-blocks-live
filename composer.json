@@ -27,7 +27,7 @@
     ],
     "require": {
         "php": ">=8.2",
-        "symfinity/ux-blocks-interactive": "@dev",
+        "symfinity/ux-blocks-interactive": "^0.1",
         "symfony/framework-bundle": "^7.4||^8.0",
         "symfony/twig-bundle": "^7.4||^8.0",
         "symfony/stimulus-bundle": "^2.0|^3.0",
@@ -39,24 +39,12 @@
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-symfony": "^2.0",
         "phpunit/phpunit": "^10.5 || ^11.0",
-        "symfinity/ux-blocks": "@dev",
+        "symfinity/ux-blocks": "^0.1.3",
         "symfony/browser-kit": "^7.4||^8.0",
         "symfony/css-selector": "^7.4||^8.0",
         "symfony/http-client": "^7.4||^8.0",
         "symfony/yaml": "^7.4||^8.0"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../ux-blocks-interactive",
-            "options": { "symlink": true }
-        },
-        {
-            "type": "path",
-            "url": "../ux-blocks",
-            "options": { "symlink": true }
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Symfinity\\UxBlocksLive\\": "src/"
@@ -76,14 +64,12 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "version": "0.1.0-dev",
     "extra": {
         "branch-alias": {
             "dev-main": "0.1.x-dev"
         },
         "symfony": {
             "require": "^7.4||^8.0"
-        },
-        "_comment": "Switch symfinity/ux-blocks-interactive to ^0.1 when interactive is tagged on Packagist (127 dependency-order)."
+        }
     }
 }
