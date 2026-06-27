@@ -1,7 +1,7 @@
 name: CI
 
 # Matrix: maintained PHP x maintained Symfony (floor 7.4.*).
-# Regenerated 2026-06-27 — refresh: split-mirror-docs/scripts/fetch-ci-matrix.sh --gha-json --package-php='>=8.2'
+# Tier B-private — GitHub VCS for split.repositories siblings not yet on Packagist (see split-mirror-ci-tiers).
 
 on:
   push:
@@ -38,12 +38,12 @@ jobs:
           coverage: none
           tools: composer:v2
 
-      - name: Resolve Symfinity siblings from GitHub mirrors
+      - name: Configure Composer GitHub OAuth
+        run: composer config --global github-oauth.github.com "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Resolve Symfinity dependencies from GitHub mirrors
         run: |
-          composer config --unset repositories
-          # Tier C (not public-bound until ux-blocks-interactive is on Packagist at ^0.1) — see split-public-bound-tier-b.
           composer config "repositories.symfinity-ux-blocks-interactive" '{"type":"vcs","url":"https://github.com/symfinity/ux-blocks-interactive"}'
-          composer require --no-update 'symfinity/ux-blocks-interactive:dev-main'
 
       - name: Pin Symfony ${{ matrix.symfony }}
         run: |
@@ -51,13 +51,12 @@ jobs:
             symfony/config:^${{ matrix.symfony }} \
             symfony/dependency-injection:^${{ matrix.symfony }} \
             symfony/framework-bundle:^${{ matrix.symfony }} \
-            symfony/http-foundation:^${{ matrix.symfony }} \
             symfony/http-kernel:^${{ matrix.symfony }} \
             symfony/twig-bundle:^${{ matrix.symfony }} \
-            symfony/yaml:^${{ matrix.symfony }} \
             symfony/browser-kit:^${{ matrix.symfony }} \
             symfony/css-selector:^${{ matrix.symfony }} \
             symfony/http-client:^${{ matrix.symfony }} \
+            symfony/yaml:^${{ matrix.symfony }} \
             'symfony/stimulus-bundle:^2.0|^3.0' \
             'symfony/ux-twig-component:^2.0|^3.0' \
             'symfony/ux-live-component:^2.0|^3.0' \
