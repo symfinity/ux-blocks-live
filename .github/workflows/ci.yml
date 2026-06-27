@@ -1,7 +1,7 @@
 name: CI
 
 # Matrix: maintained PHP x maintained Symfony (floor 7.4.*).
-# Tier B-private — GitHub VCS for split.repositories siblings not yet on Packagist (see split-mirror-ci-tiers).
+# Tier B — runtime symfinity/* from Packagist (^0.1); no VCS repository overrides.
 
 on:
   push:
@@ -37,13 +37,6 @@ jobs:
           extensions: mbstring, xml, ctype, iconv, intl, curl
           coverage: none
           tools: composer:v2
-
-      - name: Configure Composer GitHub OAuth
-        run: composer config --global github-oauth.github.com "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Resolve Symfinity dependencies from GitHub mirrors
-        run: |
-          composer config "repositories.symfinity-ux-blocks-interactive" '{"type":"vcs","url":"https://github.com/symfinity/ux-blocks-interactive"}'
 
       - name: Pin Symfony ${{ matrix.symfony }}
         run: |
