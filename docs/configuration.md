@@ -29,6 +29,19 @@ Install them before or with `symfinity/ux-blocks-live` — see [Installation](in
 
 Role CSS uses `var(--ui-*)` tokens. When **symfinity/ui-kernel** is installed, include theme CSS in your layout — see ui-kernel [theme-preference](https://github.com/symfinity/ui-kernel/blob/main/docs/theme-preference.md).
 
+## Styling without ui-kernel
+
+Live roles compose upstream tiers. Inline packaged CSS when ui-kernel is not installed:
+
+```twig
+<style id="ux-blocks-core-css">{{ ux_blocks_core_stylesheet()|raw }}</style>
+<style id="ux-blocks-form-css">{{ ux_blocks_form_stylesheet()|raw }}</style>
+<style id="ux-blocks-extended-css">{{ ux_blocks_extended_stylesheet()|raw }}</style>
+<style id="ux-blocks-interactive-css">{{ ux_blocks_interactive_stylesheet()|raw }}</style>
+```
+
+Functions ship with their respective tier packages (transitive requires). ui-kernel remains optional for full Chameleon theming.
+
 ## Turbo and LiveComponent
 
 Live roles emit `data-controller` hooks for Stimulus and participate in LiveComponent re-renders. For partial page updates, wrap live widgets in `<turbo-frame>` or use Turbo streams from your controllers — standard Symfony UX guidance applies.

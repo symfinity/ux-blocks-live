@@ -1,35 +1,32 @@
 # Quick start
 
-Use UX Blocks Live components in a Symfony app with ui-kernel theme CSS and LiveComponent enabled.
+Use UX Blocks Live components in a Symfony app with LiveComponent enabled.
 
 ## Prerequisites
 
-[Installation](installation.md) completed — upstream tiers plus `symfinity/ux-blocks-live`. Add `symfinity/ui-kernel` for themed apps. Confirm LiveComponent and Turbo bundles are registered.
+[Installation](installation.md) completed — upstream tiers plus `symfinity/ux-blocks-live`. Confirm LiveComponent and Turbo bundles are registered.
 
-## 1. Include ui-kernel CSS
+## 1. Theme CSS (pick one)
 
-Live roles rely on ui-kernel design tokens. In your base layout `<head>`:
+**Recommended — ui-kernel:**
+
+```bash
+composer require symfinity/ui-kernel
+```
 
 ```twig
 {# templates/base.html.twig #}
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}My app{% endblock %}</title>
     {{ ui_kernel_theme_boot_script() }}
     {{ ui_kernel_css()|raw }}
-    {% block stylesheets %}{% endblock %}
 </head>
-<body>
-    {% block body %}{% endblock %}
-</body>
-</html>
 ```
+
+**Minimal — inline tier CSS** (no ui-kernel): see [Configuration — styling without ui-kernel](configuration.md#styling-without-ui-kernel).
 
 ## 2. Render a LiveComponent
 
-Use `*Live` Twig component tags — server state syncs through Symfony UX LiveComponent:
+Use `*Live` Twig component tags — server state syncs through Symfony UX LiveComponent. Tag syntax is the canonical embed path (no separate `component()` alias required):
 
 ```twig
 <twig:ComboboxLive name="country" placeholder="Choose a country…" />
@@ -40,6 +37,12 @@ Use `*Live` Twig component tags — server state syncs through Symfony UX LiveCo
 ```
 
 Wrap pages that mutate live state in a Turbo frame or drive when using partial updates — see [Configuration](configuration.md).
+
+## Kiosk showroom (dev)
+
+Maintainer matrix for all five live roles: install **`symfinity/ux-blocks-kiosk`** (dev-only) and open **`GET /kiosk/blocks/live`**. Requires ui-kernel + kiosk bundle — not part of consumer `composer require symfinity/ux-blocks-live`.
+
+Dogfood: `make dogfood-new SLUG=ux-blocks-kiosk-lab` then `make dogfood-serve SLUG=ux-blocks-kiosk-lab`.
 
 ## Next steps
 

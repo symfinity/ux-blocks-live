@@ -1,14 +1,21 @@
 role: date-picker
 twig_name: DatePickerLive
-examples:
-  - id: default
-    title: Default
+groups:
+  - id: variants
     section: Variants
-    props:
-      placeholder: Pick a date
-  - id: with-value
-    title: With value
+    layout: stack
+    items:
+      - id: default
+        label: Default
+        props: {}
+        slot_twig: |
+          <twig:DatePickerLive placeholder="{{ lorem_words(2) }}" />
+  - id: states
     section: States
-    props:
-      selected: '2026-06-27'
-      placeholder: Pick a date
+    layout: stack
+    items:
+      - id: with-value
+        label: "With value"
+        props: {}
+        slot_twig: |
+          <twig:DatePickerLive placeholder="{{ lorem_words(2) }}" />

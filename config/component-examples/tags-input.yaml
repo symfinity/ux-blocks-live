@@ -1,21 +1,21 @@
 role: tags-input
 twig_name: TagsInputLive
-examples:
-  - id: default
-    title: Default
+groups:
+  - id: variants
     section: Variants
-    props:
-      placeholder: Add a tag…
-  - id: with-tags
-    title: With tags
+    layout: stack
+    items:
+      - id: default
+        label: Default
+        props: {}
+        slot_twig: |
+          <twig:TagsInputLive placeholder="{{ lorem_words(2) }}" />
+  - id: states
     section: States
-    props:
-      tags: ['symfony', 'ux']
-      placeholder: Add a tag…
-  - id: max-tags
-    title: Max tags
-    section: States
-    props:
-      maxTags: 3
-      tags: ['one', 'two']
-      placeholder: Up to three tags
+    layout: stack
+    items:
+      - id: with-tags
+        label: "With tags"
+        props: {}
+        slot_twig: |
+          <twig:TagsInputLive placeholder="{{ lorem_words(2) }}" />

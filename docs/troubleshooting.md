@@ -20,6 +20,8 @@ php bin/console debug:asset-map | grep ux-blocks-live
 
 Live role CSS uses ui-kernel tokens. Install `symfinity/ui-kernel` and include `ui_kernel_css()` in your layout — see [quick start](quickstart.md).
 
+**Without ui-kernel:** use inline tier stylesheets — [Configuration — styling without ui-kernel](configuration.md#styling-without-ui-kernel).
+
 ## Wrong component tier
 
 Tabs, menus, and toasts are **interactive** (`blocks.int.*`) — require `symfinity/ux-blocks-interactive`, not this package.

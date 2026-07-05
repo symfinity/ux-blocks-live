@@ -1,5 +1,7 @@
 # Verification
 
+**Integration profile:** P2 — embed (LiveComponent Twig tags).
+
 Checks after installing **symfinity/ux-blocks-live** in a Symfony app.
 
 ## Local commands
@@ -26,7 +28,7 @@ On a fresh Symfony 7.4+ project with the symfinity/recipes Flex endpoint:
 composer require symfinity/ux-blocks-core symfinity/ux-blocks-form symfinity/ux-blocks-extended symfinity/ux-blocks-interactive symfinity/ux-blocks-live symfony/ux-live-component symfony/ux-turbo
 ```
 
-Add ui-kernel theme CSS to your layout, then render:
+Add ui-kernel theme CSS to your layout (recommended), **or** inline upstream tier stylesheets — see [Configuration](configuration.md#styling-without-ui-kernel). Then render:
 
 ```twig
 <twig:ComboboxLive name="demo" placeholder="Choose…" />

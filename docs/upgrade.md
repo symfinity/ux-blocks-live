@@ -1,5 +1,19 @@
 # Upgrade
 
+## 0.1.2
+
+Patch release after [v0.1.1](https://github.com/symfinity/ux-blocks-live/releases/tag/v0.1.1). OOTB handbook (P2 verification, styling without ui-kernel), grouped component examples, `@layer blocks.live` CSS, and split-mirror PHPUnit bootstrap — no LiveComponent API changes.
+
+```bash
+composer update symfinity/ux-blocks-live
+```
+
+After upgrade:
+
+1. No config or registry migrations — existing `blocks.live.*` fragment ids are unchanged.
+2. Optional: pair with `symfinity/ux-blocks-core` **^0.1.6** for automatic inline tier CSS on pages that render live roles.
+3. Clear Symfony cache in dev if widgets look stale after the CSS layer change.
+
 ## 0.1.1
 
 Patch release after [v0.1.0](https://github.com/symfinity/ux-blocks-live/releases/tag/v0.1.0). Split-mirror CI, sponsorship metadata, and public roadmap — no LiveComponent API changes.
