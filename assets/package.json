@@ -1,0 +1,32 @@
+{
+    "name": "@symfinity/ux-blocks-live",
+    "symfony": {
+        "controllers": {
+            "combobox": {
+                "main": "controllers/combobox_controller.js",
+                "fetch": "eager",
+                "enabled": true
+            },
+            "data-table-chrome-interactive": {
+                "main": "controllers/data-table-chrome-interactive_controller.js",
+                "fetch": "eager",
+                "enabled": true
+            },
+            "date-picker": {
+                "main": "controllers/date-picker_controller.js",
+                "fetch": "eager",
+                "enabled": true
+            },
+            "date-range-picker": {
+                "main": "controllers/date-range-picker_controller.js",
+                "fetch": "eager",
+                "enabled": true
+            },
+            "tags-input": {
+                "main": "controllers/tags-input_controller.js",
+                "fetch": "eager",
+                "enabled": true
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+composer_name: symfinity/ux-blocks-live
+package_major: "0.x"
+handbook_family: ux-blocks
+
+sidebar:
+  - components
+  - configuration
+  - installation
+  - quickstart
+  - reference
+  - troubleshooting
+  - upgrade
+  - usage
+  - verification
+
+slices:
+  - symfony: "7.4"
+    sources:
+      - components.md
+      - components/combobox.md
+      - components/data-table-chrome-interactive.md
+      - components/date-picker.md
+      - components/date-range-picker.md
+      - components/tags-input.md
+      - configuration.md
+      - index.md
+      - installation.md
+      - quickstart.md
+      - reference.md
+      - troubleshooting.md
+      - upgrade.md
+      - usage.md
+      - verification.md

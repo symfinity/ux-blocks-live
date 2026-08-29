@@ -1,0 +1,43 @@
+ux_role_registry: "1.4"
+registry_prefix: blocks.live
+roles:
+  - role: combobox
+    twig_component: ComboboxLive
+    php_class: Symfinity\UxBlocksLive\Twig\Components\ComboboxLive
+    fragment_id: blocks.live.combobox
+    fragment_pattern: "blocks.live.combobox.{n}"
+    interaction: live
+    stage: B
+    status: shipped
+  - role: date-picker
+    twig_component: DatePickerLive
+    php_class: Symfinity\UxBlocksLive\Twig\Components\DatePickerLive
+    fragment_id: blocks.live.date-picker
+    fragment_pattern: "blocks.live.date-picker.{n}"
+    interaction: live
+    stage: B
+    status: shipped
+  - role: date-range-picker
+    twig_component: DateRangePickerLive
+    php_class: Symfinity\UxBlocksLive\Twig\Components\DateRangePickerLive
+    fragment_id: blocks.live.date-range-picker
+    fragment_pattern: "blocks.live.date-range-picker.{n}"
+    interaction: live
+    stage: B
+    status: shipped
+  - role: tags-input
+    twig_component: TagsInputLive
+    php_class: Symfinity\UxBlocksLive\Twig\Components\TagsInputLive
+    fragment_id: blocks.live.tags-input
+    fragment_pattern: "blocks.live.tags-input.{n}"
+    interaction: live
+    stage: B
+    status: shipped
+  - role: data-table-chrome-interactive
+    twig_component: DataTableChromeInteractiveLive
+    php_class: Symfinity\UxBlocksLive\Twig\Components\DataTableChromeInteractiveLive
+    fragment_id: blocks.live.data-table-chrome-interactive
+    fragment_pattern: "blocks.live.data-table-chrome-interactive.{n}"
+    interaction: live, act
+    stage: B
+    status: shipped

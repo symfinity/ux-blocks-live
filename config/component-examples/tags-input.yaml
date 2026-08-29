@@ -1,0 +1,20 @@
+role: tags-input
+twig_name: TagsInputLive
+groups:
+  - id: variants
+    section: Variants
+    layout: stack
+    items:
+      - id: default
+        props: {}
+        slot_twig: |
+          <twig:TagsInputLive placeholder="{{ lorem_words(2) }}" />
+  - id: states
+    section: States
+    layout: stack
+    items:
+      - id: with-tags
+        label: "With tags"
+        props: {}
+        slot_twig: |
+          <twig:TagsInputLive placeholder="{{ lorem_words(2) }}" />

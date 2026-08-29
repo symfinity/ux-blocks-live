@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Symfinity\UxBlocksLive\:
+    resource: '../src/'
+    exclude:
+      - '../src/SymfinityUxBlocksLiveBundle.php'
+      - '../src/DependencyInjection/'

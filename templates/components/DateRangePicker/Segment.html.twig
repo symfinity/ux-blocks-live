@@ -1,0 +1,16 @@
+<label data-ui-role="date-range-picker-segment-label">
+    <span class="sr-only">{{ label }}</span>
+    <input
+        type="text"
+        aria-label="{{ label }}"
+        {% if invalid %}aria-invalid="true" data-ui-state="invalid"{% endif %}
+        {% if disabled %}disabled data-ui-state="disabled"{% endif %}
+        {% if value %}value="{{ value }}"{% endif %}
+        {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+        data-ui-role="date-range-picker-segment"
+        data-segment="{{ segment }}"
+        data-symfony--ux-blocks-live--date-range-picker-target="{{ segment == 'start' ? 'startSegment' : 'endSegment' }}"
+        data-action="focus->symfony--ux-blocks-live--date-range-picker#focusSegment click->symfony--ux-blocks-live--date-range-picker#open"
+        {{ attributes }}
+    />
+</label>
