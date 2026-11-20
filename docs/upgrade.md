@@ -1,5 +1,13 @@
 # Upgrade
 
+## 0.1.4
+
+The package Sass build keeps quoted attribute selectors. Shipped role CSS is unchanged from 0.1.3. No config or template changes.
+
+```bash
+composer update symfinity/ux-blocks-live
+```
+
 ## 0.1.3
 
 Templates use the Stimulus names this package registers (`symfinity--ux-blocks-live--…`). They no longer emit `symfony--ux-blocks-live--…`.
