@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Symfinity\UxBlocksLive;
 
 use Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\TwigConfigurator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
@@ -19,6 +20,12 @@ final class SymfinityUxBlocksLiveBundle extends Bundle
     public function getContainerExtension(): ExtensionInterface
     {
         return new DependencyInjection\SymfinityUxBlocksLiveExtension();
+    }
+
+    public function build(ContainerBuilder $container): void
+    {
+        parent::build($container);
+        $container->setParameter('ux_blocks_live.package_dir', $this->getPath());
     }
 
     public function configureRoutes(RoutingConfigurator $routes): void

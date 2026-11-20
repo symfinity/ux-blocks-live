@@ -15,6 +15,6 @@ final class DateRangePickerLiveTest extends ComponentTestCase
         $html = $this->renderLiveComponent('DateRangePickerLive');
 
         $this->assertRootAttributes($html, 'date-range-picker', 'blocks.live.date-range-picker');
-        $this->assertStimulusController($html, 'symfony--ux-blocks-live--date-range-picker');
+        $this->assertStimulusController($html, 'symfinity--ux-blocks-live--date-range-picker');
     }
 }

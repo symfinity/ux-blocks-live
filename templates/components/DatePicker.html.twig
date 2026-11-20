@@ -1,8 +1,9 @@
 <div
-    data-ui-role="date-picker"
-    data-ui-fragment="blocks.live.date-picker"
-    data-controller="live symfony--ux-blocks-live--date-picker"
-    {{ attributes }}
+    {{ attributes.defaults({
+        'data-ui-role': 'date-picker',
+        'data-ui-fragment': 'blocks.live.date-picker',
+        'data-controller': 'symfinity--ux-blocks-live--date-picker',
+    }) }}
 >
     {% block content %}{% endblock %}
 </div>

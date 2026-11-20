@@ -15,6 +15,6 @@ final class DataTableChromeInteractiveLiveTest extends ComponentTestCase
         $html = $this->renderLiveComponent('DataTableChromeInteractiveLive');
 
         $this->assertRootAttributes($html, 'data-table-chrome-interactive', 'blocks.live.data-table-chrome-interactive');
-        $this->assertStimulusController($html, 'symfony--ux-blocks-live--data-table-chrome-interactive');
+        $this->assertStimulusController($html, 'symfinity--ux-blocks-live--data-table-chrome-interactive');
     }
 }

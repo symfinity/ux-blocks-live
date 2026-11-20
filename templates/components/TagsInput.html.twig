@@ -4,8 +4,8 @@
     {% if disabled %}data-ui-state="disabled"{% endif %}
     {% if invalid %}data-ui-state="invalid"{% endif %}
     {{ attributes.without('data-controller').defaults({
-        'data-controller': 'live symfony--ux-blocks-live--tags-input',
-        'data-symfony--ux-blocks-live--tags-input-delimiter-value': delimiter,
+        'data-controller': 'live symfinity--ux-blocks-live--tags-input',
+        'data-symfinity--ux-blocks-live--tags-input-delimiter-value': delimiter,
     }) }}
 >
     <div role="list" data-ui-role="tags-input-chips">
@@ -38,7 +38,7 @@
         aria-label="{{ placeholder ?? 'Add tag' }}"
         data-ui-role="tags-input-field"
         data-model="draft"
-        data-action="keydown.enter->live#action keydown->symfony--ux-blocks-live--tags-input#keydown input->symfony--ux-blocks-live--tags-input#input"
+        data-action="keydown.enter->live#action keydown->symfinity--ux-blocks-live--tags-input#keydown input->symfinity--ux-blocks-live--tags-input#input"
         data-live-action-param="addTag"
     />
     {% if name %}

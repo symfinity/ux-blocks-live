@@ -1,9 +1,10 @@
 <div
-    data-ui-role="date-range-picker"
-    data-ui-fragment="blocks.live.date-range-picker"
-    data-controller="live symfony--ux-blocks-live--date-range-picker"
     {% if disabled %}data-ui-state="disabled"{% endif %}
-    {{ attributes }}
+    {{ attributes.defaults({
+        'data-ui-role': 'date-range-picker',
+        'data-ui-fragment': 'blocks.live.date-range-picker',
+        'data-controller': 'symfinity--ux-blocks-live--date-range-picker',
+    }) }}
 >
     <div data-ui-role="date-range-picker-segments">
         <twig:DateRangePicker:Segment
@@ -30,7 +31,7 @@
         hidden
         aria-label="Choose date range"
         data-ui-role="date-range-picker-content"
-        data-symfony--ux-blocks-live--date-range-picker-target="content"
+        data-symfinity--ux-blocks-live--date-range-picker-target="content"
     >
         {% block content %}{% endblock %}
     </div>

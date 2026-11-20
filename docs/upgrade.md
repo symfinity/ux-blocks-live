@@ -1,5 +1,19 @@
 # Upgrade
 
+## 0.1.3
+
+Templates use the Stimulus names this package registers (`symfinity--ux-blocks-live--…`). They no longer emit `symfony--ux-blocks-live--…`.
+
+ComboboxLive writes the chosen value into a hidden field that Live Component reads. A caller action on a combobox item stays beside the built-in select action.
+
+The bundle publishes `ux_blocks_live.package_dir`, so core can load this tier's role catalogue.
+
+```bash
+composer update symfinity/ux-blocks-live
+```
+
+After upgrade, clear the Symfony cache and hard-refresh the browser so the controller scripts reload. Custom scripts that still target `symfony--ux-blocks-live--…` need the `symfinity--` names.
+
 ## 0.1.2
 
 Patch release after [v0.1.1](https://github.com/symfinity/ux-blocks-live/releases/tag/v0.1.1). OOTB handbook (P2 verification, styling without ui-kernel), grouped component examples, `@layer blocks.live` CSS, and split-mirror PHPUnit bootstrap — no LiveComponent API changes.

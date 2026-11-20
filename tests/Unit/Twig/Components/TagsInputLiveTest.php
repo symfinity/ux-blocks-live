@@ -15,6 +15,6 @@ final class TagsInputLiveTest extends ComponentTestCase
         $html = $this->renderLiveComponent('TagsInputLive');
 
         $this->assertRootAttributes($html, 'tags-input', 'blocks.live.tags-input');
-        $this->assertStimulusController($html, 'symfony--ux-blocks-live--tags-input');
+        $this->assertStimulusController($html, 'symfinity--ux-blocks-live--tags-input');
     }
 }

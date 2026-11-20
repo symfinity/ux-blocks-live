@@ -3,7 +3,7 @@ import { applyRovingTabindex, rovingKeydown } from './shared/menu-roving.js';
 import { restoreFocus, trapFocus } from './shared/overlay-base.js';
 
 export default class extends Controller {
-    static targets = ['trigger', 'content', 'item', 'filter'];
+    static targets = ['trigger', 'content', 'item', 'filter', 'model'];
 
     static values = {
         creatable: Boolean,
@@ -77,13 +77,21 @@ export default class extends Controller {
             return;
         }
 
+        const label = (item.textContent || '').trim();
+        const value = item.dataset.value || label;
+
         if (this.hasTriggerTarget) {
-            const label = (item.textContent || '').trim();
             if (label) {
                 this.triggerTarget.textContent = label;
             }
-            const value = item.dataset.value || label;
             this.triggerTarget.dataset.value = value;
+        }
+
+        // Live bridge: ComboboxLive renders a hidden data-model="selected" input.
+        if (this.hasModelTarget) {
+            this.modelTarget.value = value;
+            this.modelTarget.dispatchEvent(new Event('input', { bubbles: true }));
+            this.modelTarget.dispatchEvent(new Event('change', { bubbles: true }));
         }
 
         this.itemTargets.forEach((el) => {

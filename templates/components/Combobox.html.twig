@@ -1,11 +1,17 @@
-<div
-    data-ui-role="combobox"
-    data-ui-fragment="blocks.live.combobox"
-    data-controller="live symfony--ux-blocks-live--combobox"
-    data-symfony--ux-blocks-live--combobox-creatable-value="{{ creatable ? 'true' : 'false' }}"
-    data-symfony--ux-blocks-live--combobox-prevent-duplicates-value="{{ preventDuplicates ? 'true' : 'false' }}"
-    {% if onCreateValue %}data-symfony--ux-blocks-live--combobox-on-create-value="{{ onCreateValue }}"{% endif %}
-    {{ attributes }}
->
+{% set _live = attributes.has('data-live-name-value') %}
+{% set _creatable = creatable|default(false) %}
+{% set _preventDuplicates = preventDuplicates|default(true) %}
+{% set _onCreateValue = onCreateValue|default(null) %}
+{% set _name = _live ? attributes.render('name') : null %}
+<div {{ attributes.defaults({
+    'data-ui-role': 'combobox',
+    'data-ui-fragment': 'blocks.live.combobox',
+    'data-controller': 'symfinity--ux-blocks-live--combobox',
+    'data-symfinity--ux-blocks-live--combobox-creatable-value': _creatable ? 'true' : 'false',
+    'data-symfinity--ux-blocks-live--combobox-prevent-duplicates-value': _preventDuplicates ? 'true' : 'false',
+}|merge(_onCreateValue ? {'data-symfinity--ux-blocks-live--combobox-on-create-value': _onCreateValue} : {})) }}>
+    {% if _live %}
+        <input type="hidden"{% if _name %} name="{{ _name }}"{% endif %} data-model="selected" value="{{ selected|default('') }}" data-symfinity--ux-blocks-live--combobox-target="model">
+    {% endif %}
     {% block content %}{% endblock %}
 </div>

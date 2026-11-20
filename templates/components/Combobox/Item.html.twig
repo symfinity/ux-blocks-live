@@ -1,11 +1,10 @@
-<button
-    type="button"
-    role="option"
-    aria-selected="false"
-    data-ui-role="combobox-item"
-    data-symfony--ux-blocks-live--combobox-target="item"
-    data-action="click->symfony--ux-blocks-live--combobox#selectItem"
-    {{ attributes }}
->
+<button {{ attributes.defaults({
+    type: 'button',
+    role: 'option',
+    'aria-selected': 'false',
+    'data-ui-role': 'combobox-item',
+    'data-symfinity--ux-blocks-live--combobox-target': 'item',
+    'data-action': 'click->symfinity--ux-blocks-live--combobox#selectItem',
+}) }}>
     {% block content %}{% endblock %}
 </button>

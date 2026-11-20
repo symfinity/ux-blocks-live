@@ -18,7 +18,7 @@ Render a page with a LiveComponent and confirm registry markup:
 
 - `data-ui-role="combobox"` (or matching role)
 - `data-ui-fragment="blocks.live.combobox"`
-- `data-controller` includes `symfony--ux-blocks-live--combobox`
+- `data-controller` includes `symfinity--ux-blocks-live--combobox`
 
 ## Clean-app smoke
 

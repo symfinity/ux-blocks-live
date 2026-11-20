@@ -5,6 +5,15 @@ All notable changes to **symfinity/ux-blocks-live** are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-11-20
+
+### Fixed
+
+- Combobox, tags input, date pickers, and the data table chrome use the Stimulus names this package registers (`symfinity--ux-blocks-live--…`). The templates no longer emit `symfony--ux-blocks-live--…`
+- ComboboxLive writes the chosen value into a hidden field that Live Component reads. A caller action on a combobox item stays beside the built-in select action
+- The bundle publishes `ux_blocks_live.package_dir`, so the core role registry can load this tier's catalogue and the page can receive this tier's styles
+- PHPUnit bootstrap registers this package's PSR-4 prefixes from `composer.json` after loading the monorepo or package autoload, and narrows the decoded autoload sections before reading `psr-4`
+
 ## [0.1.2] - 2026-07-05
 
 ### Added

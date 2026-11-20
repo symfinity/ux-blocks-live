@@ -8,8 +8,8 @@ export function enabledTriggers(triggerTargets) {
     return triggerTargets.filter((el) => !el.disabled);
 }
 
-export function itemsInContent(content, targetName) {
-    return [...content.querySelectorAll(`[data-symfony--ux-blocks-live--${targetName}-target="item"]`)]
+export function itemsInContent(content, identifier) {
+    return [...content.querySelectorAll(`[data-${identifier}-target="item"]`)]
         .filter((el) => !el.disabled);
 }
 

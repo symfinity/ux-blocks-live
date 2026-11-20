@@ -27,6 +27,22 @@ Use **ComboboxLive** when the selected value must sync to the server without a f
 <twig:ComboboxLive name="label" :creatable="true" placeholder="Search or create…" />
 ```
 
+### Sending the selection to the server
+
+`ComboboxLive` renders a hidden `data-model="selected"` input inside its root. Picking an item writes the item's `data-value` (or its label) into that input, so the `selected` LiveProp updates on the next Live request. `name` goes on the same hidden input, so a plain form post also carries the value.
+
+```twig
+<twig:ComboboxLive name="country" selected="fr">
+    <twig:Combobox:Trigger>France</twig:Combobox:Trigger>
+    <twig:Combobox:Content>
+        <twig:Combobox:Item data-value="fr">France</twig:Combobox:Item>
+        <twig:Combobox:Item data-value="de" data-action="click->analytics#track">Germany</twig:Combobox:Item>
+    </twig:Combobox:Content>
+</twig:ComboboxLive>
+```
+
+A `data-action` on `Combobox:Item` is added after the built-in select action; both run.
+
 Variant previews render live from `config/component-examples/combobox.yaml`.
 
 ## API Reference
@@ -38,7 +54,7 @@ Variant previews render live from `config/component-examples/combobox.yaml`.
 | `onCreateValue` | `string?` | `null` | Hook for custom create handling |
 | `preventDuplicates` | `bool` | `true` | Block duplicate labels in creatable mode |
 
-Pass `name`, `placeholder`, `disabled`, and native attributes on the component tag.
+`name` names the hidden selection input. Pass `placeholder`, `disabled`, and native attributes on the component tag.
 
 ## Accessibility
 
